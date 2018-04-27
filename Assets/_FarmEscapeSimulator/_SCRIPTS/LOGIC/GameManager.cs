@@ -11,14 +11,17 @@ public class GameManager : MonoBehaviour {
     public static GameManager Instance { get { return _instance; } }
 
     [SerializeField]
-    string FirstSceneScene;
+    string FirstScene;
 
-    static PlayerPrefs CurrPlayer;
-    static LauncherStats currLauncher;
+    [SerializeField]
+    public LauncherStats currLauncher;
+
+    public PlayerPrefs CurrPlayer;
+
 
     public enum GameState : short { MainMenu, BaseGameMode }
 
-    private GameState activeGameState;
+    public GameState activeGameState;
 
     public GameState ActiveGameState
     {
@@ -33,7 +36,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public static LauncherStats CurrLauncher
+    public LauncherStats CurrLauncher
     {
         get
         {
@@ -63,7 +66,7 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
-        LoadScene("Winslow");
+        LoadScene(FirstScene);
     }
 
     public void LoadScene(string sceneName)
