@@ -16,12 +16,6 @@ public class CatapultController : MonoBehaviour
     float minDist;              //min distance from wheel center to track touch position
 
     [SerializeField]
-    float maxSpins;             // how many spins do you need to get full value
-
-    [SerializeField]
-    float lounchTime;           // time limit after which launcher will launch
-
-    [SerializeField]
     float moveMargin;           // touch move distance margin 
 
     float fingerId;             // controlling finger
@@ -49,7 +43,7 @@ public class CatapultController : MonoBehaviour
         fingerIn = false;
         timerActive = false;
         launched = false;
-        maxSum = maxSpins * Mathf.PI * 2;
+        maxSum = launcher.getMaxSpins() * Mathf.PI * 2;
         launcher = GetComponent<Launcher>();
         oscillator = GetComponent<Oscillator>();
     }
@@ -57,7 +51,7 @@ public class CatapultController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!launched && timer < lounchTime && Mathf.Abs(sum) < maxSum) // if not launched, have time and can rotate
+        if (!launched && timer < launcher.getLaunchTime() && Mathf.Abs(sum) < maxSum) // if not launched, have time and can rotate
         {
             SpinLogic();
             oscillator.OscillationLogic(aState);

@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
     string FirstSceneScene;
 
     static PlayerPrefs CurrPlayer;
-
+    static LauncherStats currLauncher;
 
     public enum GameState : short { MainMenu, BaseGameMode }
 
@@ -33,8 +33,18 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public static LauncherStats CurrLauncher
+    {
+        get
+        {
+            return currLauncher;
+        }
 
-
+        set
+        {
+            currLauncher = value;
+        }
+    }
 
     void Awake()
     {
