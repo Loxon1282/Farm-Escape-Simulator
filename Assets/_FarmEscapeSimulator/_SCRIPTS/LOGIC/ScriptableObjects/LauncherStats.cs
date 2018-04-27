@@ -1,9 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-[System.Serializable]
-public class LauncherStats{
+[CreateAssetMenu(fileName = "Data", menuName = "Prefs", order = 1)]
+public class LauncherStats : ScriptableObject
+{ 
 
     [SerializeField]
     public GameObject projectal;       // animal
