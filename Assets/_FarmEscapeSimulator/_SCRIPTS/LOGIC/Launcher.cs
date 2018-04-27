@@ -111,8 +111,8 @@ public class Launcher : MonoBehaviour
         return stats.lounchTime;
     }
 
-    public void LoadStats()
+   public void LoadStats()
     {
-        stats = GameManager.CurrLauncher;
+        stats = GameManager.Instance.currLauncher;
     }
 }
