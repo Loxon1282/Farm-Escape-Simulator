@@ -9,51 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1717966514240906}
+  m_RootGameObject: {fileID: 1626158857299236}
   m_IsPrefabParent: 1
---- !u!1 &1717966514240906
+--- !u!1 &1626158857299236
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4443528386695594}
-  - component: {fileID: 114014253675376838}
+  - component: {fileID: 4003642402551618}
+  - component: {fileID: 114956551649173638}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: AnimalController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4443528386695594
+--- !u!4 &4003642402551618
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1717966514240906}
+  m_GameObject: {fileID: 1626158857299236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.1239109, y: 2.2262487, z: 0.026336424}
+  m_LocalPosition: {x: -1.6938037, y: -0.8490908, z: 26.291317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114014253675376838
+--- !u!114 &114956551649173638
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1717966514240906}
+  m_GameObject: {fileID: 1626158857299236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 986b5c1c1530dbf4d8c50f5d3e5ae0eb, type: 3}
+  m_Script: {fileID: 11500000, guid: f9c6eab1afb9d0b4da7fa74030664fa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstScene: TestScene
-  projectiles:
-  - {fileID: 1302312944725058, guid: 3cdfab005629c3f428cd7cda0fed378c, type: 2}
-  currLauncher: {fileID: 11400000, guid: 8e674d1c18d79c54fb68c09561ef7284, type: 2}
-  Controller: {fileID: 1626158857299236, guid: c2db2022c2553184da5edc3e7ef2d6f0, type: 2}
-  activeGameState: 0
+  animal: {fileID: 0}

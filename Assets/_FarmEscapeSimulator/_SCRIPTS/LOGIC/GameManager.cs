@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     public LauncherStats currLauncher;
 
+    [SerializeField]
+    GameObject Controller;
+
+    AnimalController currController;
+
     public PlayerPrefs CurrPlayer;
 
     public enum GameState : short { MainMenu, BaseGameMode }
@@ -143,5 +148,19 @@ public class GameManager : MonoBehaviour {
     }
     #endregion 
 
+    public void SpawnAnimalController(GameObject anima)
+    {
+        currController = Instantiate(Controller, new Vector3(0, 0, 0), Quaternion.identity).GetComponent<AnimalController>();
 
+        currController.SetAnimal(anima);
+        currController.SetStats();
+    }
+
+    public void DestroyController()
+    {
+        if(currController != null)
+        {
+            Destroy(currController.gameObject);
+        }
+    }
 }
