@@ -8,6 +8,5 @@ public class AnimalStats: System.Object
 
 
     public int farts;
-    public float fartCoolDown;
 
 }

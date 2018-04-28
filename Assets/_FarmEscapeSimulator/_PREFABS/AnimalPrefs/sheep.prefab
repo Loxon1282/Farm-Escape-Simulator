@@ -1364,9 +1364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983fa4d7219ac114a978c32225d30fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FartPower: 500
   stats:
-    farts: 0
-    fartCoolDown: 0
+    farts: 3
 --- !u!135 &135597503401009128
 SphereCollider:
   m_ObjectHideFlags: 1

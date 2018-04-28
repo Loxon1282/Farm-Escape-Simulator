@@ -17,26 +17,31 @@ public class AnimalController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.touchCount > 0)
+        if (stats.farts > 0)
         {
-
-            foreach (Touch touch in Input.touches)
+            if (Input.touchCount > 0)
             {
-                if (touch.phase == TouchPhase.Began)
+
+                foreach (Touch touch in Input.touches)
                 {
-                    Ray ray = Camera.main.ScreenPointToRay(touch.position);
-                    RaycastHit[] hits;
-                    if ((hits = Physics.RaycastAll(ray)) != null)
+                    if (touch.phase == TouchPhase.Began)
                     {
-                        foreach (RaycastHit h in hits)
+                        Ray ray = Camera.main.ScreenPointToRay(touch.position);
+                        RaycastHit[] hits;
+                        if ((hits = Physics.RaycastAll(ray)) != null)
                         {
-                            if (h.collider.gameObject.tag == "projectile") animal.GetComponent<ProjectileComponent>().AnimalInteraction();
+                            foreach (RaycastHit h in hits)
+                            {
+                                if (h.collider.gameObject.tag == "projectile")
+                                {
+                                    animal.GetComponent<ProjectileComponent>().Fart();
+                                    stats.farts--;
+                                }
+                            }
                         }
                     }
                 }
             }
-        }
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -45,13 +50,15 @@ public class AnimalController : MonoBehaviour {
                 {
                     foreach (RaycastHit h in hits)
                     {
-                    if (h.collider.gameObject.tag == "projectile")
-                    {
-                        animal.GetComponent<ProjectileComponent>().AnimalInteraction();
-                    }
+                        if (h.collider.gameObject.tag == "projectile")
+                        {
+                            animal.GetComponent<ProjectileComponent>().Fart();
+                            stats.farts--;
+                        }
                     }
                 }
             }
+        }
         
     }
 
