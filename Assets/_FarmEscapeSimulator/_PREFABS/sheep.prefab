@@ -123,9 +123,10 @@ GameObject:
   - component: {fileID: 4251452475271822}
   - component: {fileID: 54455286261464060}
   - component: {fileID: 114465585327249476}
+  - component: {fileID: 135597503401009128}
   m_Layer: 0
   m_Name: sheep
-  m_TagString: Untagged
+  m_TagString: projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -380,7 +381,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1302312944725058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.2883587, y: 1.6191498, z: 0.006061822}
+  m_LocalPosition: {x: 0, y: 3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4456751664668710}
@@ -1363,3 +1364,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983fa4d7219ac114a978c32225d30fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats:
+    farts: 0
+    fartCoolDown: 0
+--- !u!135 &135597503401009128
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1302312944725058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
