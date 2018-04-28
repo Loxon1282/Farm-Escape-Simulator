@@ -9,7 +9,8 @@ public class GameManager : MonoBehaviour {
 
     private static GameManager _instance;
 
-    public static GameManager Instance { get { return _instance; } }
+    public static GameManager Instance {get {return _instance;}}
+
 
     [SerializeField]
     string FirstScene;
@@ -79,6 +80,11 @@ public class GameManager : MonoBehaviour {
     public void LoadScene(string sceneName)
     {
         SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Single);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("r")) LoadScene("gameTest");
     }
 
     #region Sets

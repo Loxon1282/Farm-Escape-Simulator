@@ -97,7 +97,6 @@ public class Launcher : MonoBehaviour
         lState = aState;
         controled = false;
         aState = Mathf.Abs((arm.transform.localRotation.eulerAngles.x - (arm.transform.localRotation.eulerAngles.x < 0 ? 360:0)) - lowerBound) / wholeAngle;
-        print(aState);
         SetAngles(lowerBound, launchingBound);
     }
 
