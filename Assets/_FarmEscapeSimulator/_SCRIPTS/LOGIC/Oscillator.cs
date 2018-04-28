@@ -67,4 +67,10 @@ public class Oscillator : MonoBehaviour
         arrow.localPosition = new Vector2(arrow.localPosition.x, height * (value - 0.5f) * 2);
     }
 
+    public void Deactivate()
+    {
+        Scale.gameObject.SetActive(false);
+        enabled = false;
+    }
+
 }

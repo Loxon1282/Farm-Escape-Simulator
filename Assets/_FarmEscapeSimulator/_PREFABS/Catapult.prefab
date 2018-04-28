@@ -8613,9 +8613,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 0}
-  maxDist: 100
+  maxDist: 1000
   minDist: 0
-  moveMargin: 1
+  moveMargin: 0.5
 --- !u!114 &114371609284913260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10354,7 +10354,7 @@ MonoBehaviour:
   arm: {fileID: 1272525473089162}
   spoon: {fileID: 1984319610352826}
   stats: {fileID: 11400000, guid: 8e674d1c18d79c54fb68c09561ef7284, type: 2}
-  preLoadedStats: 1
+  preLoadedStats: 0
 --- !u!114 &114490263162468244
 MonoBehaviour:
   m_ObjectHideFlags: 1

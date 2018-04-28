@@ -99,11 +99,12 @@ public class Launcher : MonoBehaviour
         localProjectile.transform.parent = null;
         localProjectile.GetComponent<Rigidbody>().isKinematic = false;
         localProjectile.GetComponent<Rigidbody>().AddForce(launchVector * stats.lPower * lState);
+        Deactivate();
     }
 
     public void SetProjectile()
     {
-        localProjectile = Instantiate(stats.projectile, spoon.transform.position, Quaternion.identity);
+        localProjectile = Instantiate(stats.projectile, spoon.transform.position,  Quaternion.Euler(0,0,0));
         localProjectile.transform.parent = spoon.transform;
         localProjectile.GetComponent<Rigidbody>().isKinematic = true;
     }
@@ -116,11 +117,27 @@ public class Launcher : MonoBehaviour
 
     public float getLaunchTime()
     {
-        return stats.lounchTime;
+        return stats.launchTime;
     }
 
    public void LoadStats()
     {
         stats = GameManager.Instance.currLauncher;
+    }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 100, 100), lAngle.ToString());
+        GUI.Label(new Rect(0, 100, 100,100), launchVector.ToString());
+    }
+
+    void Deactivate()
+    {
+        GetComponent<CatapultController>().Deactivate();
+        GetComponent<CatapultController>().enabled = false;
+        GetComponent<Oscillator>().Deactivate();
+        GetComponent<Oscillator>().enabled = false;
+        GetComponent<PcLauncherController>().enabled = false;
+        GetComponent<Launcher>().enabled = false;
     }
 }
