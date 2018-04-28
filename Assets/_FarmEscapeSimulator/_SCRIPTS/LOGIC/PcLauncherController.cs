@@ -31,8 +31,8 @@ public class PcLauncherController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space")) direction = 1;
-        if (Input.GetKeyUp("space"))
+        if (Input.GetKeyDown("space") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)) direction = 1;
+        if (Input.GetKeyUp("space") || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended))
         {
             direction = -1;
             launcher.SetLaunch(oscillator.oState);

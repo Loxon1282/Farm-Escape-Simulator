@@ -8607,15 +8607,15 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273652608572406}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b81d9569db68e44f942c88d49056ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   wheel: {fileID: 0}
-  maxDist: 100
+  maxDist: 1000
   minDist: 0
-  moveMargin: 1
+  moveMargin: 0.5
 --- !u!114 &114371609284913260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10354,7 +10354,7 @@ MonoBehaviour:
   arm: {fileID: 1272525473089162}
   spoon: {fileID: 1984319610352826}
   stats: {fileID: 11400000, guid: 8e674d1c18d79c54fb68c09561ef7284, type: 2}
-  preLoadedStats: 1
+  preLoadedStats: 0
 --- !u!114 &114490263162468244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16172,7 +16172,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273652608572406}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4cfd3df8b17c5a04aaaaff692888378e, type: 3}
   m_Name: 

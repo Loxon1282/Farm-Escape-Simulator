@@ -51,17 +51,21 @@ public class CatapultController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!launched && timer < launcher.getLaunchTime() && Mathf.Abs(sum) < maxSum) // if not launched, have time and can rotate
+        if (!launched && timer < launcher.getLaunchTime())//&& Mathf.Abs(sum) < maxSum) // if not launched, have time and can rotate
         {
             SpinLogic();
-            oscillator.OscillationLogic(aState);
         }
-        else // else shoot and reset
+        if (launched)
         {
             Done();
             Reset();
         }
-
+        /*else // else shoot and reset
+        {
+            Done();
+            Reset();
+        }*/
+        oscillator.OscillationLogic(aState);
         if (timerActive) timer += Time.deltaTime; // ad time to timer
 
     }
@@ -139,6 +143,7 @@ public class CatapultController : MonoBehaviour
         fingerIn = false;
         timerActive = false;
         launched = false;
+        launcher.SetProjectile();
     }
 
     float GetLookAtRotation(Vector2 from, Vector2 to)
@@ -158,4 +163,9 @@ public class CatapultController : MonoBehaviour
         launcher.SetLaunch(oscillator.oState);
     }
 
+    public void Deactivate()
+    {
+        wheel.gameObject.SetActive(false);
+        enabled = false;
+    }
 }
