@@ -11,6 +11,9 @@ public class ObstacleGenerator : MonoBehaviour {
         public string tag;
         public GameObject prefab;
         public int size;
+        [Range (0,99)]
+        public int chances;
+        public bool[] heights = new bool[12];
     }
 
     #region Singleton
