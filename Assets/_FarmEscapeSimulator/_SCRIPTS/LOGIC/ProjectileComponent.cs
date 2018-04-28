@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class ProjectileComponent : MonoBehaviour {
 
+
+    [SerializeField]
+    float FartPower;
+
+    Vector3 FartVector;
+
     public AnimalStats stats;
 	// Use this for initialization
 	void Start () {
-		
+        FartVector = transform.up;
 	}
 	
 	// Update is called once per frame
@@ -52,9 +58,9 @@ public class ProjectileComponent : MonoBehaviour {
         }
     }
 
-    public void AnimalInteraction()
+    public void Fart()
     {
-        gameObject.transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+        GetComponent<Rigidbody>().AddForce(FartVector* FartPower);
     }
 
 }
