@@ -5,21 +5,20 @@ using UnityEngine;
 public class SwipeController : MonoBehaviour {
 
     public Swipe swipeController;
-	void Start () {
-		
-	}
 	
 	
 	void Update () {
+
         if (swipeController.SwipeLeft)
         {
-            Debug.Log("SWIPE LEFT");
+            Debug.Log("swipe left");
         }
         if (swipeController.Tap)
         {
-            Debug.Log("TAP");
+            Debug.Log("tap");
         }
         if (swipeController.SwipeUp)
-            Debug.Log("UP");
-	}
+            Debug.Log("up");
+    }
+    
 }
