@@ -5,12 +5,15 @@ using UnityEngine;
 public class Launcher : MonoBehaviour
 {
 
-
+    [SerializeField]
+    GameObject arm;
     [SerializeField]
     GameObject spoon;
     
     [SerializeField]
     LauncherStats stats;
+    [SerializeField]
+    bool preLoadedStats = false;
 
     float aFrom;
     float aTo;
@@ -27,6 +30,8 @@ public class Launcher : MonoBehaviour
     bool controled;             // is launcher controlled by controller
     bool working;
 
+    GameObject localProjectile;
+
 
     void Start()
     {
@@ -37,15 +42,15 @@ public class Launcher : MonoBehaviour
         SetAngles(upperBound,lowerBound);
         controled = true;
         working = true;
-        //LoadStats();
-        SetProjectal();
+        if (!preLoadedStats) LoadStats();
+        SetProjectile();
     }
 
     void FixedUpdate()
     {
         if (working)
         {
-            spoon.transform.localRotation = Quaternion.Euler(new Vector3(Mathf.Lerp(aFrom, aTo, aState),0,0));
+            arm.transform.localRotation = Quaternion.Euler(new Vector3(Mathf.Lerp(aFrom, aTo, aState),0,0));
             if (!controled)
             {
                 StateLogic();
@@ -84,21 +89,23 @@ public class Launcher : MonoBehaviour
         launchVector = launchVector.normalized;
         lState = aState;
         controled = false;
-        aState = Mathf.Abs((spoon.transform.rotation.eulerAngles.z - lowerBound) / (launchingBound - lowerBound));
-        SetAngles(spoon.transform.rotation.eulerAngles.z, launchingBound);
+        aState = Mathf.Abs((arm.transform.rotation.eulerAngles.z - lowerBound) / (launchingBound - lowerBound));
+        SetAngles(arm.transform.rotation.eulerAngles.z, launchingBound);
     }
 
     void Launch()
     {
         working = false;
-        stats.projectal.transform.parent = null;
-        stats.projectal.GetComponent<Rigidbody>().isKinematic = false;
-        stats.projectal.GetComponent<Rigidbody>().AddForce(launchVector * stats.lPower * lState);
+        localProjectile.transform.parent = null;
+        localProjectile.GetComponent<Rigidbody>().isKinematic = false;
+        localProjectile.GetComponent<Rigidbody>().AddForce(launchVector * stats.lPower * lState);
     }
 
-    public void SetProjectal()
+    public void SetProjectile()
     {
-        Instantiate(stats.projectal, spoon.transform.position, Quaternion.identity);
+        localProjectile = Instantiate(stats.projectile, spoon.transform.position, Quaternion.identity);
+        localProjectile.transform.parent = spoon.transform;
+        localProjectile.GetComponent<Rigidbody>().isKinematic = true;
     }
 
 

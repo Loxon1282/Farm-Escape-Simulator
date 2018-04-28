@@ -6,7 +6,7 @@ public class LauncherStats : ScriptableObject
 { 
 
     [SerializeField]
-    public GameObject projectal;       // animal
+    public GameObject projectile;       // animal
     [SerializeField]
     public float speed;                // rotation speed
     [SerializeField]
