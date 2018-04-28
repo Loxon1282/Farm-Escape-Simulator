@@ -7,33 +7,52 @@ public class ObstacleSpawner : MonoBehaviour {
    ObstacleGenerator generator;
     public int[] height= new int[12];
     float startWidth;
-    int generateDistance;
-    void Awake()
-    {
-        generator = ObstacleGenerator.Instance;
-    }
+
+    private int readyDistance = 0;
+
+    [Range(200, 1500)]
+    public int generateDistance = 150;
+
+    [Range(100.0f,500.0f)]
+    public float spacing = 100.0f;
+
+    [Range(4,30)]
+    public int verticalSpacing = 8;
+
+    public Transform player;
+
     void Start () {
         generator = ObstacleGenerator.Instance;
-        SetHeights();
-        for (int i = 0; i < 12; i++)
+        if (player == null)
+            player = Camera.main.transform;
+
+        SetHeights();        
+        GenerateObstacles(generateDistance*2);
+    }
+
+    private void Update()
+    {
+        if (player.position.z > readyDistance - generateDistance)
         {
-            height[i] = (i * 2);
+            GenerateObstacles(generateDistance);
         }
-        GenerateObstacles(500);
-
-
     }
 
     private void SetHeights()
     {
-       
+        for (int i = 0; i < 12; i++)
+        {
+            height[i] = (i * verticalSpacing);
+        }
     }
+
     public void GenerateObstacles(int genDistance)
     {
         for(int h = 0;h<height.Length;h++)
         {
             int parts = 0;
-            int distanceParts = genDistance / 80;
+            int distanceParts = genDistance / Mathf.FloorToInt(spacing);
+
             while (parts < distanceParts)
             {
                 int rand = Random.Range(0, generator.obstacles.Count);
@@ -42,15 +61,17 @@ public class ObstacleSpawner : MonoBehaviour {
                 {
                     if (Random.Range(0, 100) < generator.obstacles[rand].chances)
                     {
-                        float position = parts * 80.0f + Random.Range(0, 75.0f) + 5.0f;
-                        generator.SpawnObstacle(generator.obstacles[rand].tag, new Vector3(0, height[h], position)).SetActive(true);
+                        float position = parts * spacing + Random.Range(0, spacing-20.0f) + 20.0f;
+                        generator.SpawnObstacle(generator.obstacles[rand].tag, new Vector3(-10.0f, height[h], position+readyDistance)).SetActive(true);
                         parts++;
                     }
                     else
                         continue;
                 }
             }
+            
         }
+        readyDistance += genDistance;
     }
 
 
