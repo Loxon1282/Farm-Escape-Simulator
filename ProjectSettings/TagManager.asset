@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - mine
+  - flyingMine
+  - plank
+  - screw
+  - gears
+  - coins
+  - bird
+  - baloon
+  - feedBag
+  - specialFeedBag
   layers:
   - Default
   - TransparentFX
