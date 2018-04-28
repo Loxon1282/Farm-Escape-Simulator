@@ -30,13 +30,14 @@ public class Launcher : MonoBehaviour
 
     void Start()
     {
-        lowerBound = 345;
-        upperBound = 300;
-        launchingBound = 270;
+        lowerBound = -30;
+        upperBound = 15;
+        launchingBound = 30;
         aState = 0;
         SetAngles(upperBound,lowerBound);
         controled = true;
         working = true;
+        //LoadStats();
         SetProjectal();
     }
 
@@ -44,7 +45,7 @@ public class Launcher : MonoBehaviour
     {
         if (working)
         {
-            spoon.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Lerp(aFrom, aTo, aState)));
+            spoon.transform.localRotation = Quaternion.Euler(new Vector3(Mathf.Lerp(aFrom, aTo, aState),0,0));
             if (!controled)
             {
                 StateLogic();

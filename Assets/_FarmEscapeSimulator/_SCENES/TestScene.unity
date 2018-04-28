@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -2794,8 +2794,6 @@ GameObject:
   - component: {fileID: 443194784}
   - component: {fileID: 443194783}
   - component: {fileID: 443194782}
-  - component: {fileID: 443194786}
-  - component: {fileID: 443194785}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2848,29 +2846,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &443194785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 443194781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad9e9caab7affbc41b3df8e8830b3c76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &443194786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 443194781}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77e40c5023c3e384d88cd8c0f5bdf5aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swipeController: {fileID: 443194785}
 --- !u!1001 &448187928
 Prefab:
   m_ObjectHideFlags: 0
@@ -3515,7 +3490,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 570353671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -285.34995, y: 177.34995, z: 0}
+  m_LocalPosition: {x: -223.84995, y: 159.84995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1395526010}
@@ -5878,15 +5853,16 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1395526011}
-        m_MethodName: SetSceneView
-        m_Mode: 3
+      - m_Target: {fileID: 114014253675376838, guid: a6bdf0506cbba104dbe7935131e7106f,
+          type: 2}
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: gameTest
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -8238,7 +8214,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1395526006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 437.5, y: 229, z: 0}
+  m_LocalPosition: {x: 376, y: 211.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 570353672}
@@ -12476,7 +12452,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2061540629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 48.59, y: 2.86, z: 13.27}
+  m_LocalPosition: {x: 29.58, y: 3.09, z: 13.27}
   m_LocalScale: {x: 1.0000005, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 1116062}
@@ -12486,7 +12462,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.59, y: 2.86}
+  m_AnchoredPosition: {x: 29.58, y: 3.09}
   m_SizeDelta: {x: 10, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061540631
