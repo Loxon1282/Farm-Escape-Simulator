@@ -17,7 +17,9 @@ public class SwipeController : MonoBehaviour {
         }
         if (swipeController.Tap)
         {
-            //Debug.Log("TAP");
+            Debug.Log("TAP");
         }
+        if (swipeController.SwipeUp)
+            Debug.Log("UP");
 	}
 }
