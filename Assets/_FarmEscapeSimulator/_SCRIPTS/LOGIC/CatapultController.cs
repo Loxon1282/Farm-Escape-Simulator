@@ -39,11 +39,11 @@ public class CatapultController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        sum = 0;
+        launcher = GetComponent<Launcher>();
+        sum = maxSum * launcher.GetState();
         fingerIn = false;
         timerActive = false;
         launched = false;
-        launcher = GetComponent<Launcher>();
         oscillator = GetComponent<Oscillator>();
         maxSum = launcher.getMaxSpins() * Mathf.PI * 2;
     }
@@ -55,16 +55,7 @@ public class CatapultController : MonoBehaviour
         {
             SpinLogic();
         }
-        if (launched)
-        {
-            Done();
-            Reset();
-        }
-        /*else // else shoot and reset
-        {
-            Done();
-            Reset();
-        }*/
+
         oscillator.OscillationLogic(aState);
         if (timerActive) timer += Time.deltaTime; // ad time to timer
 
@@ -130,6 +121,8 @@ public class CatapultController : MonoBehaviour
             {
                 fingerId = -1;
                 launched = true;
+                Done();
+                Reset();
             }
 
         }

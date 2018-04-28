@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ProjectileComponent : MonoBehaviour {
 
+    public AnimalStats stats;
 	// Use this for initialization
 	void Start () {
 		

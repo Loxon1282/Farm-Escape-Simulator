@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7c164e57e57804db3e6e9180831b58, type: 3}
   m_Name: StartingLauncherStats
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1223529321633490, guid: 668caebedf2799047a8d8ff0fa92316f, type: 2}
-  speed: 32
-  lPower: 5000
+  projectile: {fileID: 1302312944725058, guid: 3cdfab005629c3f428cd7cda0fed378c, type: 2}
+  speed: 0.2
+  lPower: 3000
   perfAngle: 45
   deviationAngle: 30
-  maxSpins: 312
-  launchTime: 1
+  maxSpins: 10
+  launchTime: 100
