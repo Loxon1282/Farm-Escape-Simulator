@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_FarmEscapeSimulator/_SCENES/StartingScene.unity
+    path: Assets/_FarmEscapeSimulator/_SCENES/_GAMESCENE.unity
+    guid: 2d45c786c72a1de4197c1b2b506a129f
+  - enabled: 1
+    path: Assets/_FarmEscapeSimulator/_SCENES/StartScene.unity
     guid: f8367fab1fe9e3143932a46d5b541c2a
   - enabled: 1
     path: Assets/_FarmEscapeSimulator/_SCENES/OptymalizationTestScene.unity
     guid: 47e366f51c2d977448b9443a6636be83
   - enabled: 1
-    path: Assets/_FarmEscapeSimulator/_SCENES/TestScene.unity
+    path: Assets/_FarmEscapeSimulator/_SCENES/MenuScene.unity
     guid: 8314ff396698d824bb7cad9669da45d0
   - enabled: 1
-    path: Assets/_FarmEscapeSimulator/_SCENES/gameTest.unity
+    path: Assets/_FarmEscapeSimulator/_SCENES/GameScene.unity
     guid: 2a72422f7ca7cb14e8b900d73c866a6e
