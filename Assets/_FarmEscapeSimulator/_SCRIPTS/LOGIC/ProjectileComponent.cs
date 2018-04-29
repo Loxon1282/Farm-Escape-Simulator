@@ -7,18 +7,28 @@ public class ProjectileComponent : MonoBehaviour {
 
     [SerializeField]
     float FartPower;
-
-    Vector3 FartVector;
+    [SerializeField]
+    float TorqueForce=10;
+    [SerializeField]
+    float GlidingForce = 10;
 
     public AnimalStats stats;
+
+    bool isGliding;
+
+    Rigidbody rb;
 	// Use this for initialization
 	void Start () {
-        FartVector = transform.up;
+       rb = GetComponent<Rigidbody>();
+       isGliding = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void FixedUpdate () {
+        if (isGliding)
+        {
+            Gliding();
+        }
 	}
 
     private void OnTriggerEnter(Collider other)
@@ -60,7 +70,30 @@ public class ProjectileComponent : MonoBehaviour {
 
     public void Fart()
     {
-        GetComponent<Rigidbody>().AddForce(FartVector* FartPower);
+        rb.AddForce(gameObject.transform.right * FartPower, ForceMode.Impulse);
     }
 
+    public void Rotate(float x)
+    {
+        Vector3 Force = gameObject.transform.forward * x * TorqueForce;
+        rb.AddTorque(Force, ForceMode.Acceleration);
+    }
+
+    void Gliding()
+    {
+        float dot = Vector3.Dot(gameObject.transform.up, rb.velocity.normalized) * -1;
+        Vector3 Force = gameObject.transform.up * dot * GlidingForce;
+        print(dot);
+        rb.AddForce(Force, ForceMode.Acceleration);
+    }
+
+    public void GlidingMode(bool x = true)
+    {
+        isGliding = x;
+    }
+
+    public void ToggleGliding()
+    {
+        isGliding = !isGliding;
+    }
 }
