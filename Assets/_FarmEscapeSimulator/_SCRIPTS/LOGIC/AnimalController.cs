@@ -7,16 +7,24 @@ public class AnimalController : MonoBehaviour {
 
     public GameObject animal;
     AnimalStats stats;
+    ProjectileComponent projComp;
 	// Use this for initialization
 	void Start () {
 
         FocusCameraOnAnimal();
-
+        projComp = animal.GetComponent<ProjectileComponent>();
 	}
+
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.W)) projComp.Rotate(1);
+        if (Input.GetKey(KeyCode.S)) projComp.Rotate(-1);
+    }
 
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.G)) projComp.ToggleGliding();
         if (stats.farts > 0)
         {
             if (Input.touchCount > 0)
@@ -34,7 +42,7 @@ public class AnimalController : MonoBehaviour {
                             {
                                 if (h.collider.gameObject.tag == "projectile")
                                 {
-                                    animal.GetComponent<ProjectileComponent>().Fart();
+                                    projComp.Fart();
                                     stats.farts--;
                                 }
                             }
@@ -52,7 +60,7 @@ public class AnimalController : MonoBehaviour {
                     {
                         if (h.collider.gameObject.tag == "projectile")
                         {
-                            animal.GetComponent<ProjectileComponent>().Fart();
+                            projComp.Fart();
                             stats.farts--;
                         }
                     }
