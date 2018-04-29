@@ -6,31 +6,61 @@ using UnityEngine.UI;
 public class _DoAnimalControllera : MonoBehaviour {
 
     public Text touchText;
-    bool isButtonDown = false;
+    float screenWidth;
+    public float triggerValue;
+    float deltaY;
+    int touchNumber;
+    bool isControlling = false;
 
 
-	void Start () {
-        
-	}
-	// Update is called once per frame
+    void Start () {
+
+        screenWidth = Screen.width * 3 / 4;
+        isControlling = false;
+
+    }
+
 	void Update () {
-
-        if (Input.touches.Length > 0&&!isButtonDown)
+        
+        if (Input.touches.Length > 0)
         {
-            touchText.text = "TOUCHES: " + Input.touchCount+" POS: "+Input.touches[0].position;
-            
+            int i = 0;
+            foreach (var touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began && isControlling == false)
+                {
+                    if (touch.position.x < screenWidth)
+                    { 
+                        deltaY = touch.position.y;
+                        touchNumber = i;
+                        isControlling = true;
+                    }
+                }
+                else if(isControlling == true&&touchNumber==i&&touch.phase == TouchPhase.Ended)
+                {
+                    triggerValue = 0;
+                    isControlling = false;
+                }
+
+                i++;
+
+            }
+
+            if(isControlling == true)
+            {
+                triggerValue = Mathf.Round((Input.touches[touchNumber].position.y - deltaY) * 100f) / 10000f;
+            }
+            if (triggerValue > 1.0f)
+                triggerValue = 1.0f;
+            else if (triggerValue < -1.0f)
+                triggerValue = -1.0f;
+            touchText.text = "TOUCHES: " + Input.touchCount + " POS: " + Input.touches[touchNumber].position + " VALUE: "+triggerValue;
+
         }
+
         else
             touchText.text = "ZERO";
 
-    }
-    public void ButtonClicked()
-    {
-        isButtonDown = true;
-    }
-    public void ButtonUnClicked()
-    {
-        isButtonDown = false;
     }
     
 }

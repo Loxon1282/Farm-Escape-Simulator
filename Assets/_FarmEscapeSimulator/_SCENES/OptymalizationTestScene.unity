@@ -66738,6 +66738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchText: {fileID: 1414135355}
+  triggerValue: 0
 --- !u!114 &1414135355
 MonoBehaviour:
   m_ObjectHideFlags: 0
