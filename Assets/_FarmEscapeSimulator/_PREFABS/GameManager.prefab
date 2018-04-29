@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986b5c1c1530dbf4d8c50f5d3e5ae0eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FirstScene: TestScene
+  FirstScene: MenuScene
   projectiles:
   - {fileID: 1302312944725058, guid: 3cdfab005629c3f428cd7cda0fed378c, type: 2}
   currLauncher: {fileID: 11400000, guid: 8e674d1c18d79c54fb68c09561ef7284, type: 2}

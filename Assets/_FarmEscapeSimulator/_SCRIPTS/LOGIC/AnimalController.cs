@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class AnimalController : MonoBehaviour {
 
-
+    [HideInInspector]
     public GameObject animal;
     AnimalStats stats;
     ProjectileComponent projComp;
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    GameObject glider;
+    // Use this for initialization
+    void Start () {
 
         FocusCameraOnAnimal();
         projComp = animal.GetComponent<ProjectileComponent>();
@@ -24,7 +26,12 @@ public class AnimalController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)) projComp.ToggleGliding();
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            if (projComp.isGliding) HideGlider();
+            else ShowGlider();
+            projComp.ToggleGliding();
+        }
         if (stats.farts > 0)
         {
             if (Input.touchCount > 0)
@@ -84,5 +91,16 @@ public class AnimalController : MonoBehaviour {
     void FocusCameraOnAnimal()
     {
         Camera.main.GetComponent<PrimitiveCameraFollow>().target = animal.transform;
+    }
+
+    void ShowGlider()
+    {
+        GameObject glid = Instantiate(glider, animal.transform.position, Quaternion.identity);
+        glid.transform.SetParent(animal.transform);
+    }
+
+    void HideGlider()
+    {
+        Destroy(animal.transform.Find("glider"));
     }
 }

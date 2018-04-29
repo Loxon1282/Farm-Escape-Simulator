@@ -52,3 +52,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: {fileID: 0}
+  glider: {fileID: 1986459192869128, guid: aebc7cb0b32b9d3458b5b7f65d027370, type: 2}
