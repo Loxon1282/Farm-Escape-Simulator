@@ -1366,9 +1366,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FartPower: 30
   TorqueForce: 10
-  GlidingForce: 30
+  GlidingForce: 5
+  VelocityModifie: 1.7
   stats:
     farts: 3
+  isGliding: 0
 --- !u!135 &135597503401009128
 SphereCollider:
   m_ObjectHideFlags: 1

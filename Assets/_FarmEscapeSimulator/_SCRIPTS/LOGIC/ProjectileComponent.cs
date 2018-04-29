@@ -11,10 +11,13 @@ public class ProjectileComponent : MonoBehaviour {
     float TorqueForce=10;
     [SerializeField]
     float GlidingForce = 10;
-
+    [SerializeField]
+    float VelocityModifie = 10;
+    [SerializeField]
+    float Nosedive = 10;
     public AnimalStats stats;
 
-    bool isGliding;
+    public bool isGliding;
 
     Rigidbody rb;
 	// Use this for initialization
@@ -82,8 +85,9 @@ public class ProjectileComponent : MonoBehaviour {
     void Gliding()
     {
         float dot = Vector3.Dot(gameObject.transform.up, rb.velocity.normalized) * -1;
-        Vector3 Force = gameObject.transform.up * dot * GlidingForce;
-        print(dot);
+        Vector3 Force = gameObject.transform.up * dot * GlidingForce * rb.velocity.magnitude * VelocityModifie;
+        Vector3 ForceT = gameObject.transform.forward * dot * Nosedive * -1;
+        rb.AddTorque(ForceT, ForceMode.Acceleration);
         rb.AddForce(Force, ForceMode.Acceleration);
     }
 

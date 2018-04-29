@@ -84,7 +84,7 @@ public class GameManager : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown("r")) LoadScene("gameTest");
+        if (Input.GetKeyDown("r")) LoadScene("GameScene");
     }
 
     #region Sets
