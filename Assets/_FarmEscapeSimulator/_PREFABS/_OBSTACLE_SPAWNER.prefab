@@ -1,0 +1,118 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1925945568690918}
+  m_IsPrefabParent: 1
+--- !u!1 &1925945568690918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4870974259631068}
+  - component: {fileID: 114068066120222696}
+  - component: {fileID: 114468209274980842}
+  m_Layer: 0
+  m_Name: _OBSTACLE_SPAWNER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4870974259631068
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1925945568690918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.441654, y: 5.285065, z: 37.010597}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114068066120222696
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1925945568690918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074553491d3c171429ac9b3255ca90ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obstacles:
+  - tag: mine
+    prefab: {fileID: 1674980297858372, guid: 15aeb207ee8d51c4396f729039d8ac2d, type: 2}
+    size: 15
+    chances: 30
+    heights: 010000000000000000000000
+  - tag: flyingMine
+    prefab: {fileID: 1260984631190448, guid: c986c0c8ebdacbd43882745edcedac3e, type: 2}
+    size: 15
+    chances: 30
+    heights: 000000000000010101010101
+  - tag: plank
+    prefab: {fileID: 1705360043279942, guid: b96fff6d12b03614fac4f1d6f26ccefc, type: 2}
+    size: 15
+    chances: 30
+    heights: 010000000000000000000000
+  - tag: screw
+    prefab: {fileID: 1438105658436548, guid: a061d70c4ae6e0242b4b18b8b075d606, type: 2}
+    size: 15
+    chances: 30
+    heights: 010101010101000000000000
+  - tag: gears
+    prefab: {fileID: 1763857146643772, guid: 56935cb6bc8847141ad6ebb069044582, type: 2}
+    size: 8
+    chances: 15
+    heights: 000100010001000100010001
+  - tag: coins
+    prefab: {fileID: 1559435023637650, guid: 8831c2dfe39955b458b9cd562d394c5c, type: 2}
+    size: 25
+    chances: 50
+    heights: 010101010101010101010101
+  - tag: bird
+    prefab: {fileID: 1977972861519536, guid: c25023c5ae35d844393b758073d20e20, type: 2}
+    size: 15
+    chances: 30
+    heights: 000000000101010101000000
+  - tag: baloon
+    prefab: {fileID: 1170145074508492, guid: f4940ac28ecd99b47a1e984c20a64a27, type: 2}
+    size: 15
+    chances: 30
+    heights: 000001010101010101010101
+  - tag: feedBag
+    prefab: {fileID: 1099311253840424, guid: 543f1206751273b4584195d6eba4251c, type: 2}
+    size: 15
+    chances: 30
+    heights: 010101010101010101010101
+  - tag: specialFeedBag
+    prefab: {fileID: 1973912727663690, guid: 1788e8b050ca99844ad3376a3c52a685, type: 2}
+    size: 10
+    chances: 20
+    heights: 010101010101010101010101
+--- !u!114 &114468209274980842
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1925945568690918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fca41dba6f74174690b67754493f9f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  height: 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  generateDistance: 150

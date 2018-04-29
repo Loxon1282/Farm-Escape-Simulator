@@ -52,5 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirstScene: TestScene
+  projectiles:
+  - {fileID: 1302312944725058, guid: 3cdfab005629c3f428cd7cda0fed378c, type: 2}
   currLauncher: {fileID: 11400000, guid: 8e674d1c18d79c54fb68c09561ef7284, type: 2}
+  Controller: {fileID: 1626158857299236, guid: c2db2022c2553184da5edc3e7ef2d6f0, type: 2}
   activeGameState: 0

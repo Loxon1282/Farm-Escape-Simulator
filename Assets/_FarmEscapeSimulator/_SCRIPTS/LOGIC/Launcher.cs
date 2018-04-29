@@ -5,12 +5,15 @@ using UnityEngine;
 public class Launcher : MonoBehaviour
 {
 
-
+    [SerializeField]
+    GameObject arm;
     [SerializeField]
     GameObject spoon;
     
     [SerializeField]
     LauncherStats stats;
+    [SerializeField]
+    bool preLoadedStats = false;
 
     float aFrom;
     float aTo;
@@ -19,6 +22,7 @@ public class Launcher : MonoBehaviour
     float upperBound;           // 270, -90 in editor = after launch
     float lowerBound;           // 345, -15 in editor = ready to launch
     float launchingBound;       // around 280/290
+    float wholeAngle;           // around 280/290
 
     Vector3 launchVector;
     float lAngle;
@@ -27,24 +31,28 @@ public class Launcher : MonoBehaviour
     bool controled;             // is launcher controlled by controller
     bool working;
 
+    GameObject localProjectile;
+
 
     void Start()
     {
-        lowerBound = 345;
-        upperBound = 300;
-        launchingBound = 270;
-        aState = 0;
-        SetAngles(upperBound,lowerBound);
+        lowerBound = -30;
+        upperBound = 15;
+        launchingBound = 30;
+        wholeAngle = Mathf.Abs(lowerBound - launchingBound);
+        aState = Mathf.Abs(upperBound - launchingBound) / wholeAngle;
+        SetAngles(launchingBound,lowerBound);
         controled = true;
         working = true;
-        SetProjectal();
+        if (!preLoadedStats) LoadStats();
+        SetProjectile();
     }
 
     void FixedUpdate()
     {
         if (working)
         {
-            spoon.transform.rotation = Quaternion.Euler(new Vector3(0, 0, Mathf.Lerp(aFrom, aTo, aState)));
+            arm.transform.localRotation = Quaternion.Euler(new Vector3(Mathf.Lerp(aFrom, aTo, aState),0,0));
             if (!controled)
             {
                 StateLogic();
@@ -65,6 +73,11 @@ public class Launcher : MonoBehaviour
         }
     }
 
+    public float GetState()
+    {
+        return aState;
+    }
+
     public void SetState(float value)
     {
         if(controled)aState = value;
@@ -83,21 +96,24 @@ public class Launcher : MonoBehaviour
         launchVector = launchVector.normalized;
         lState = aState;
         controled = false;
-        aState = Mathf.Abs((spoon.transform.rotation.eulerAngles.z - lowerBound) / (launchingBound - lowerBound));
-        SetAngles(spoon.transform.rotation.eulerAngles.z, launchingBound);
+        aState = Mathf.Abs((arm.transform.localRotation.eulerAngles.x - (arm.transform.localRotation.eulerAngles.x < 0 ? 360:0)) - lowerBound) / wholeAngle;
+        SetAngles(lowerBound, launchingBound);
     }
 
     void Launch()
     {
         working = false;
-        stats.projectal.transform.parent = null;
-        stats.projectal.GetComponent<Rigidbody>().isKinematic = false;
-        stats.projectal.GetComponent<Rigidbody>().AddForce(launchVector * stats.lPower * lState);
+        localProjectile.transform.parent = null;
+        localProjectile.GetComponent<Rigidbody>().isKinematic = false;
+        localProjectile.GetComponent<Rigidbody>().AddForce(launchVector * stats.lPower * lState);
+        Deactivate();
     }
 
-    public void SetProjectal()
+    public void SetProjectile()
     {
-        Instantiate(stats.projectal, spoon.transform.position, Quaternion.identity);
+        localProjectile = Instantiate(stats.projectile, spoon.transform.position,  Quaternion.Euler(0,0,0));
+        localProjectile.transform.parent = spoon.transform;
+        localProjectile.GetComponent<Rigidbody>().isKinematic = true;
     }
 
 
@@ -108,11 +124,23 @@ public class Launcher : MonoBehaviour
 
     public float getLaunchTime()
     {
-        return stats.lounchTime;
+        return stats.launchTime;
     }
 
    public void LoadStats()
     {
         stats = GameManager.Instance.currLauncher;
+    }
+
+
+    void Deactivate()
+    {
+        GetComponent<CatapultController>().Deactivate();
+        GetComponent<CatapultController>().enabled = false;
+        GetComponent<Oscillator>().Deactivate();
+        GetComponent<Oscillator>().enabled = false;
+        GetComponent<PcLauncherController>().enabled = false;
+        GetComponent<Launcher>().enabled = false;
+        GameManager.Instance.SpawnAnimalController(localProjectile);
     }
 }
