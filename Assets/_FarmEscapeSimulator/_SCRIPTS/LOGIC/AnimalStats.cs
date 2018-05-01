@@ -6,7 +6,7 @@ using UnityEngine;
 public class AnimalStats: System.Object
 {
 
-
-    public int farts;
+    public float farts;
+    public float health;
 
 }

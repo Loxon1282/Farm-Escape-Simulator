@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     GameObject Controller;
 
-    AnimalController currController;
+    private AnimalController currController;
 
     public PlayerPrefs CurrPlayer;
 
@@ -55,6 +55,19 @@ public class GameManager : MonoBehaviour {
         set
         {
             currLauncher = value;
+        }
+    }
+
+    public AnimalController CurrController
+    {
+        get
+        {
+            return currController;
+        }
+
+        set
+        {
+            currController = value;
         }
     }
 
@@ -157,9 +170,7 @@ public class GameManager : MonoBehaviour {
     public void SpawnAnimalController(GameObject anima)
     {
         currController = Instantiate(Controller, new Vector3(0, 0, 0), Quaternion.identity).GetComponent<AnimalController>();
-
         currController.SetAnimal(anima);
-        currController.SetStats();
     }
 
     public void DestroyController()
@@ -168,5 +179,11 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(currController.gameObject);
         }
+    }
+
+    public void TurnOnGlider()
+    {
+        if(Instance.currController!=null)
+            Instance.currController.TurnOnGlider();
     }
 }

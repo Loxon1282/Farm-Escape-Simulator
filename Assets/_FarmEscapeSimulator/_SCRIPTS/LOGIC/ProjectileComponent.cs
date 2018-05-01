@@ -15,15 +15,26 @@ public class ProjectileComponent : MonoBehaviour {
     float VelocityModifie = 10;
     [SerializeField]
     float Nosedive = 10;
-    public AnimalStats stats;
+    [SerializeField]
+    float MinePower = 10;
+    [SerializeField]
+    float BallonTime = 3;
+    [SerializeField]
+    float BallonForce = 10;
+    [SerializeField]
+    float SlowFactor = 0.2f;
 
     public bool isGliding;
+    bool isFloating;
 
+    AnimalController contr;
     Rigidbody rb;
+
 	// Use this for initialization
 	void Start () {
-       rb = GetComponent<Rigidbody>();
-       isGliding = false;
+        rb = GetComponent<Rigidbody>();
+        isGliding = false;
+        isFloating = false;
 	}
 	
 	// Update is called once per frame
@@ -32,17 +43,21 @@ public class ProjectileComponent : MonoBehaviour {
         {
             Gliding();
         }
-	}
+        if (isFloating)
+        {
+            Floating();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
         {
             case "baloon":
-                print(other.tag);
+                StartCoroutine("StartFloat");
                 break;
             case "bird":
-                print(other.tag);
+                SlowDown();
                 break;
             case "coin":
                 print(other.tag);
@@ -50,20 +65,12 @@ public class ProjectileComponent : MonoBehaviour {
             case "feedBag":
                 print(other.tag);
                 break;
-            case "flyingMine":
-                print(other.tag);
-                break;
-            case "gears":
-                print(other.tag);
+            case "scrap":
+                contr.AddScrap();
                 break;
             case "mine":
-                print(other.tag);
-                break;
-            case "plank":
-                print(other.tag);
-                break;
-            case "screw":
-                print(other.tag);
+                rb.AddForce(new Vector3(Mathf.Cos(Mathf.Deg2Rad * 45), Mathf.Sin(Mathf.Deg2Rad * 45), 0) * MinePower, ForceMode.VelocityChange);
+                contr.Damage();
                 break;
             case "specialFeedBag":
                 print(other.tag);
@@ -99,5 +106,27 @@ public class ProjectileComponent : MonoBehaviour {
     public void ToggleGliding()
     {
         isGliding = !isGliding;
+    }
+
+    public void ConnectControler(AnimalController x)
+    {
+        contr = x;
+    }
+
+    IEnumerator StartFloat()
+    {
+        isFloating = true;
+        yield return new WaitForSeconds(BallonTime);
+        isFloating = false;
+    }
+
+    void Floating()
+    {
+        rb.AddForce(Vector3.up * BallonForce, ForceMode.Acceleration);
+    }
+
+    void SlowDown()
+    {
+        rb.AddForce(rb.velocity * -1 * SlowFactor, ForceMode.VelocityChange);
     }
 }

@@ -1351,7 +1351,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &114465585327249476
 MonoBehaviour:
@@ -1366,10 +1366,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FartPower: 30
   TorqueForce: 10
-  GlidingForce: 5
+  GlidingForce: 3
   VelocityModifie: 1.7
-  stats:
-    farts: 3
+  Nosedive: 50
+  MinePower: 50
+  BallonTime: 3
+  BallonForce: 10
+  SlowFactor: 0.9
   isGliding: 0
 --- !u!135 &135597503401009128
 SphereCollider:
