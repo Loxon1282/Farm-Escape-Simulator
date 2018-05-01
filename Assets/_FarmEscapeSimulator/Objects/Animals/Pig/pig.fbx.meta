@@ -1,78 +1,75 @@
 fileFormatVersion: 2
-guid: e095f50556518b44db8f6ab3724596fe
-timeCreated: 1524992277
+guid: 02b1788a09419ba458ff5386d1e56ba9
+timeCreated: 1525083042
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cone.000
-    100002: Cone.001
-    100004: Cone.002
-    100006: Cone.003
-    100008: //RootNode
-    100010: Plane
-    100012: Plane.001
-    100014: Plane.002
-    100016: Plane.003
-    100018: Sphere
-    100020: Sphere.001
-    400000: Cone.000
-    400002: Cone.001
-    400004: Cone.002
-    400006: Cone.003
-    400008: //RootNode
-    400010: Plane
-    400012: Plane.001
-    400014: Plane.002
-    400016: Plane.003
-    400018: Sphere
-    400020: Sphere.001
-    2300000: Cone.000
-    2300002: Cone.001
-    2300004: Cone.002
-    2300006: Cone.003
-    2300008: Plane
-    2300010: Plane.001
-    2300012: Plane.002
-    2300014: Plane.003
-    2300016: Sphere
-    2300018: Sphere.001
-    3300000: Cone.000
-    3300002: Cone.001
-    3300004: Cone.002
-    3300006: Cone.003
-    3300008: Plane
-    3300010: Plane.001
-    3300012: Plane.002
-    3300014: Plane.003
-    3300016: Sphere
-    3300018: Sphere.001
-    4300000: Cone.000
-    4300002: Cone.003
-    4300004: Cone.002
-    4300006: Cone.001
-    4300008: Plane.003
-    4300010: Plane.002
-    4300012: Sphere.001
-    4300014: Sphere
-    4300016: Plane.001
-    4300018: Plane
+    100000: Armature
+    100002: BackLegs
+    100004: Body
+    100006: BodyReference
+    100008: Bone
+    100010: Bone.001
+    100012: Bone.001_end
+    100014: Bone.002
+    100016: Bone.003
+    100018: Bone.003_end
+    100020: Bone_end
+    100022: Ears
+    100024: Face
+    100026: FrontLegs
+    100028: Icosphere
+    100030: //RootNode
+    100032: Tail
+    400000: Armature
+    400002: BackLegs
+    400004: Body
+    400006: BodyReference
+    400008: Bone
+    400010: Bone.001
+    400012: Bone.001_end
+    400014: Bone.002
+    400016: Bone.003
+    400018: Bone.003_end
+    400020: Bone_end
+    400022: Ears
+    400024: Face
+    400026: FrontLegs
+    400028: Icosphere
+    400030: //RootNode
+    400032: Tail
+    4300000: Body
+    4300002: Ears
+    4300004: Face
+    4300006: Tail
+    4300008: Icosphere
+    4300010: BackLegs
+    4300012: FrontLegs
+    9500000: //RootNode
+    13700000: BackLegs
+    13700002: Body
+    13700004: Ears
+    13700006: Face
+    13700008: FrontLegs
+    13700010: Icosphere
+    13700012: Tail
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 1098f43d9bb2e04468ff2c6e0496cda3, type: 2}
+      name: pig_black
+    second: {fileID: 2100000, guid: 02e074a0f749f224f801264956980ba6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pink
-    second: {fileID: 2100000, guid: 05005c930220b304caee1ad55d144114, type: 2}
+      name: pig_pink
+    second: {fileID: 2100000, guid: 18785f13d37c7b14ba458e40983d1cf0, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pinkier
-    second: {fileID: 2100000, guid: 64156c7cc5efde844a5103f1f498b22b, type: 2}
+      name: pig_pink_dark
+    second: {fileID: 2100000, guid: 75229ea2e240f9d499bd6ec9e92aa139, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -144,7 +141,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
