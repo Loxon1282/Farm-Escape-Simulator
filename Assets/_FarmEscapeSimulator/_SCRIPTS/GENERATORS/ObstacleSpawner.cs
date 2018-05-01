@@ -62,7 +62,7 @@ public class ObstacleSpawner : MonoBehaviour {
                     if (Random.Range(0, 100) < generator.obstacles[rand].chances)
                     {
                         float position = parts * spacing + Random.Range(0, spacing-20.0f) + 20.0f;
-                        generator.SpawnObstacle(generator.obstacles[rand].tag, new Vector3(-10.0f, height[h], position+readyDistance)).SetActive(true);
+                        generator.SpawnObstacle(generator.obstacles[rand].tag, new Vector3(-2.0f, height[h], position+readyDistance)).SetActive(true);
                         parts++;
                     }
                     else
