@@ -5,16 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - mine
-  - flyingMine
-  - plank
-  - screw
-  - gears
   - coins
   - bird
   - baloon
   - feedBag
   - specialFeedBag
   - projectile
+  - scrap
+  - gears
+  - plank
+  - screw
   layers:
   - Default
   - TransparentFX

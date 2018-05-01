@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23485625484123644}
   m_Layer: 0
   m_Name: gears
-  m_TagString: gears
+  m_TagString: scrap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

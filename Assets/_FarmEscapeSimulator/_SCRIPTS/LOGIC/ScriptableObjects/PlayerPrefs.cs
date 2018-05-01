@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerPrefs
 {
-
     public string name;
     public float record;
     public float coinCount;

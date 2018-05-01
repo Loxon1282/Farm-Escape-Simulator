@@ -15,6 +15,6 @@ MonoBehaviour:
   speed: 0.2
   lPower: 3000
   perfAngle: 45
-  deviationAngle: 30
+  deviationAngle: 0
   maxSpins: 10
   launchTime: 100
