@@ -7,29 +7,57 @@ public class ProjectileComponent : MonoBehaviour {
 
     [SerializeField]
     float FartPower;
+    [SerializeField]
+    float TorqueForce=10;
+    [SerializeField]
+    float GlidingForce = 10;
+    [SerializeField]
+    float VelocityModifie = 10;
+    [SerializeField]
+    float Nosedive = 10;
+    [SerializeField]
+    float MinePower = 10;
+    [SerializeField]
+    float BallonTime = 3;
+    [SerializeField]
+    float BallonForce = 10;
+    [SerializeField]
+    float SlowFactor = 0.2f;
 
-    Vector3 FartVector;
+    public bool isGliding;
+    bool isFloating;
 
-    public AnimalStats stats;
+    AnimalController contr;
+    Rigidbody rb;
+
 	// Use this for initialization
 	void Start () {
-        FartVector = transform.up;
+        rb = GetComponent<Rigidbody>();
+        isGliding = false;
+        isFloating = false;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void FixedUpdate () {
+        if (isGliding)
+        {
+            Gliding();
+        }
+        if (isFloating)
+        {
+            Floating();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
         {
             case "baloon":
-                print(other.tag);
+                StartCoroutine("StartFloat");
                 break;
             case "bird":
-                print(other.tag);
+                SlowDown();
                 break;
             case "coin":
                 print(other.tag);
@@ -37,20 +65,12 @@ public class ProjectileComponent : MonoBehaviour {
             case "feedBag":
                 print(other.tag);
                 break;
-            case "flyingMine":
-                print(other.tag);
-                break;
-            case "gears":
-                print(other.tag);
+            case "scrap":
+                contr.AddScrap();
                 break;
             case "mine":
-                print(other.tag);
-                break;
-            case "plank":
-                print(other.tag);
-                break;
-            case "screw":
-                print(other.tag);
+                rb.AddForce(new Vector3(Mathf.Cos(Mathf.Deg2Rad * 45), Mathf.Sin(Mathf.Deg2Rad * 45), 0) * MinePower, ForceMode.VelocityChange);
+                contr.Damage();
                 break;
             case "specialFeedBag":
                 print(other.tag);
@@ -60,7 +80,53 @@ public class ProjectileComponent : MonoBehaviour {
 
     public void Fart()
     {
-        GetComponent<Rigidbody>().AddForce(FartVector* FartPower);
+        rb.AddForce(gameObject.transform.right * FartPower, ForceMode.Impulse);
     }
 
+    public void Rotate(float x)
+    {
+        Vector3 Force = gameObject.transform.forward * x * TorqueForce;
+        rb.AddTorque(Force, ForceMode.Acceleration);
+    }
+
+    void Gliding()
+    {
+        float dot = Vector3.Dot(gameObject.transform.up, rb.velocity.normalized) * -1;
+        Vector3 Force = gameObject.transform.up * dot * GlidingForce * rb.velocity.magnitude * VelocityModifie;
+        Vector3 ForceT = gameObject.transform.forward * dot * Nosedive * -1;
+        rb.AddTorque(ForceT, ForceMode.Acceleration);
+        rb.AddForce(Force, ForceMode.Acceleration);
+    }
+
+    public void GlidingMode(bool x = true)
+    {
+        isGliding = x;
+    }
+
+    public void ToggleGliding()
+    {
+        isGliding = !isGliding;
+    }
+
+    public void ConnectControler(AnimalController x)
+    {
+        contr = x;
+    }
+
+    IEnumerator StartFloat()
+    {
+        isFloating = true;
+        yield return new WaitForSeconds(BallonTime);
+        isFloating = false;
+    }
+
+    void Floating()
+    {
+        rb.AddForce(Vector3.up * BallonForce, ForceMode.Acceleration);
+    }
+
+    void SlowDown()
+    {
+        rb.AddForce(rb.velocity * -1 * SlowFactor, ForceMode.VelocityChange);
+    }
 }

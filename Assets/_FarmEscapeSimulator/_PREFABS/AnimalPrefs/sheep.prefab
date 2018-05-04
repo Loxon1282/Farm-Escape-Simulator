@@ -1347,11 +1347,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 3
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &114465585327249476
 MonoBehaviour:
@@ -1364,9 +1364,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 983fa4d7219ac114a978c32225d30fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FartPower: 500
-  stats:
-    farts: 3
+  FartPower: 30
+  TorqueForce: 10
+  GlidingForce: 3
+  VelocityModifie: 1.7
+  Nosedive: 50
+  MinePower: 50
+  BallonTime: 3
+  BallonForce: 10
+  SlowFactor: 0.9
+  isGliding: 0
 --- !u!135 &135597503401009128
 SphereCollider:
   m_ObjectHideFlags: 1
