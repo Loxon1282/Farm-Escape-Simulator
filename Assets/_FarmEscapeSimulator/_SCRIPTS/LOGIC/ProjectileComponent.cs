@@ -8,6 +8,8 @@ public class ProjectileComponent : MonoBehaviour {
     [SerializeField]
     float FartPower;
     [SerializeField]
+    float FartCost = 0.1f;
+    [SerializeField]
     float TorqueForce=10;
     [SerializeField]
     float GlidingForce = 10;
@@ -26,6 +28,7 @@ public class ProjectileComponent : MonoBehaviour {
 
     public bool isGliding;
     bool isFloating;
+    public bool isFarting;
 
     AnimalController contr;
     Rigidbody rb;
@@ -35,7 +38,8 @@ public class ProjectileComponent : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         isGliding = false;
         isFloating = false;
-	}
+        isFarting = false;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -46,6 +50,10 @@ public class ProjectileComponent : MonoBehaviour {
         if (isFloating)
         {
             Floating();
+        }
+        if (isFarting && contr.stats.farts > 0)
+        {
+            Fart();
         }
     }
 
@@ -77,15 +85,21 @@ public class ProjectileComponent : MonoBehaviour {
                 break;
         }
     }
-
-    public void Fart()
+    /*                   
+    public void Fart()  //Impulse farting
     {
         rb.AddForce(gameObject.transform.right * FartPower, ForceMode.Impulse);
+    }
+    */
+    public void Fart()  //Continuse farting
+    {
+        rb.AddForce(gameObject.transform.right * FartPower, ForceMode.Acceleration);
+        contr.stats.farts -= FartCost;
     }
 
     public void Rotate(float x)
     {
-        Vector3 Force = gameObject.transform.forward * x * TorqueForce;
+        Vector3 Force = Vector3.forward * x * TorqueForce;
         rb.AddTorque(Force, ForceMode.Acceleration);
     }
 
