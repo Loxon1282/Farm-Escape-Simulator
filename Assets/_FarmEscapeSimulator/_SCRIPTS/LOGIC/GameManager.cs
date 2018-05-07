@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     GameObject Controller;
 
+    [SerializeField]
+    public bool debug;
+
     private AnimalController currController;
 
     public PlayerPrefs CurrPlayer;
@@ -179,11 +182,5 @@ public class GameManager : MonoBehaviour {
         {
             Destroy(currController.gameObject);
         }
-    }
-
-    public void TurnOnGlider()
-    {
-        if(Instance.currController!=null)
-            Instance.currController.TurnOnGlider();
     }
 }

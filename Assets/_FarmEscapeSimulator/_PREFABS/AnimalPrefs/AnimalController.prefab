@@ -52,4 +52,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animal: {fileID: 0}
+  stats:
+    farts: 1
+    health: 0
   glider: {fileID: 1986459192869128, guid: aebc7cb0b32b9d3458b5b7f65d027370, type: 2}
+  button: {fileID: 1994931456420488, guid: 74f2768a0cc2bfe449dda3d532e8225c, type: 2}
+  fartBar: {fileID: 1812058986658454, guid: 47023f8b6a2e882429cf1f515c1e5d39, type: 2}
+  group: {fileID: 1211050812769326, guid: 508e4eacfd6594144bd2aebbf9e979c3, type: 2}
+  triggerValue: 0

@@ -1365,6 +1365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FartPower: 30
+  FartCost: 0.01
   TorqueForce: 10
   GlidingForce: 3
   VelocityModifie: 1.7
@@ -1374,6 +1375,7 @@ MonoBehaviour:
   BallonForce: 10
   SlowFactor: 0.9
   isGliding: 0
+  isFarting: 0
 --- !u!135 &135597503401009128
 SphereCollider:
   m_ObjectHideFlags: 1
