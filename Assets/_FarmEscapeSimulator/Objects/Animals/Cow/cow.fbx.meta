@@ -1,88 +1,70 @@
 fileFormatVersion: 2
-guid: c6383bd1399924e4c952dc34daa7564d
-timeCreated: 1524992166
+guid: b100a3fe14d3aa346904627001532b83
+timeCreated: 1526133528
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Icosphere
-    100004: Icosphere.001
-    100006: Icosphere.002
-    100008: Icosphere.003
-    100010: Icosphere.004
-    100012: Icosphere.005
-    100014: Icosphere.006
-    100016: Sphere
-    100018: Sphere.001
-    100020: Sphere.002
-    100022: Sphere.003
-    100024: Sphere.004
-    400000: //RootNode
-    400002: Icosphere
-    400004: Icosphere.001
-    400006: Icosphere.002
-    400008: Icosphere.003
-    400010: Icosphere.004
-    400012: Icosphere.005
-    400014: Icosphere.006
-    400016: Sphere
-    400018: Sphere.001
-    400020: Sphere.002
-    400022: Sphere.003
-    400024: Sphere.004
-    2300000: Icosphere
-    2300002: Icosphere.001
-    2300004: Icosphere.002
-    2300006: Icosphere.003
-    2300008: Icosphere.004
-    2300010: Icosphere.005
-    2300012: Icosphere.006
-    2300014: Sphere
-    2300016: Sphere.001
-    2300018: Sphere.002
-    2300020: Sphere.003
-    2300022: Sphere.004
-    3300000: Icosphere
-    3300002: Icosphere.001
-    3300004: Icosphere.002
-    3300006: Icosphere.003
-    3300008: Icosphere.004
-    3300010: Icosphere.005
-    3300012: Icosphere.006
-    3300014: Sphere
-    3300016: Sphere.001
-    3300018: Sphere.002
-    3300020: Sphere.003
-    3300022: Sphere.004
-    4300000: Sphere.002
-    4300002: Sphere.004
-    4300004: Sphere.003
-    4300006: Sphere.001
-    4300008: Icosphere.006
-    4300010: Icosphere.005
-    4300012: Icosphere.004
-    4300014: Icosphere.003
-    4300016: Icosphere.002
-    4300018: Icosphere.001
-    4300020: Icosphere
-    4300022: Sphere
+    100000: Armature.001
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.003
+    100010: Bone.003_end
+    100012: Bone.004
+    100014: Bone.004_end
+    100016: Bone.005
+    100018: Bone.005_end
+    100020: Bone.006
+    100022: Bone.006_end
+    100024: Bone.007
+    100026: Bone.007_end
+    100028: Bone.008
+    100030: Bone.008_end
+    100032: //RootNode
+    100034: Cylinder
+    400000: Armature.001
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.003
+    400010: Bone.003_end
+    400012: Bone.004
+    400014: Bone.004_end
+    400016: Bone.005
+    400018: Bone.005_end
+    400020: Bone.006
+    400022: Bone.006_end
+    400024: Bone.007
+    400026: Bone.007_end
+    400028: Bone.008
+    400030: Bone.008_end
+    400032: //RootNode
+    400034: Cylinder
+    4300000: Cylinder
+    9500000: //RootNode
+    13700000: Cylinder
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Black
-    second: {fileID: 2100000, guid: 0fbe669a81889624196f26f23e875155, type: 2}
+      name: cow_black
+    second: {fileID: 2100000, guid: 96c22749ae68cdb40bf2270e2f37d326, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Pink
-    second: {fileID: 2100000, guid: 7fe4a2e3bcfb1b84da9b16e76ab8dee3, type: 2}
+      name: cow_gray
+    second: {fileID: 2100000, guid: 25e8833143f9db94f8afafaef87edf76, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: White
-    second: {fileID: 2100000, guid: f4b2bb0301e9e3b4a87ddb3da9f4c148, type: 2}
+      name: cow_pink
+    second: {fileID: 2100000, guid: f91c0ee385f5314438900771abd48845, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cow_white
+    second: {fileID: 2100000, guid: d6732642a1ea699469279c40941cecfa, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -129,7 +111,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -154,7 +136,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
