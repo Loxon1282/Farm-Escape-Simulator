@@ -1,84 +1,78 @@
 fileFormatVersion: 2
-guid: 08e3c3e6f8446c14ab8e1cbcc9a1f319
-timeCreated: 1524879883
+guid: ac14c3bc8618f404bbcee90ccc91e91c
+timeCreated: 1526133189
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Cylinder
-    100002: Cylinder.001
-    100004: Cylinder.002
-    100006: Cylinder.003
-    100008: //RootNode
-    100010: Sphere
-    100012: Sphere.001
-    100014: Sphere.002
-    100016: Sphere.003
-    100018: Sphere.004
-    100020: Sphere.005
-    100022: Sphere.006
-    100024: Sphere.007
-    100026: Sphere.008
-    100028: Sphere.009
-    100030: Sphere.010
-    100032: Sphere.011
-    100034: Sphere.012
-    100036: Sphere.013
-    400000: Cylinder
-    400002: Cylinder.001
-    400004: Cylinder.002
-    400006: Cylinder.003
-    400008: //RootNode
-    400010: Sphere
-    400012: Sphere.001
-    400014: Sphere.002
-    400016: Sphere.003
-    400018: Sphere.004
-    400020: Sphere.005
-    400022: Sphere.006
-    400024: Sphere.007
-    400026: Sphere.008
-    400028: Sphere.009
-    400030: Sphere.010
-    400032: Sphere.011
-    400034: Sphere.012
-    400036: Sphere.013
-    2300000: Cylinder
-    2300002: Cylinder.001
-    2300004: Cylinder.002
-    2300006: Cylinder.003
-    2300008: Sphere
-    2300010: Sphere.001
-    2300012: Sphere.002
-    2300014: Sphere.003
-    2300016: Sphere.004
-    2300018: Sphere.005
-    2300020: Sphere.006
-    2300022: Sphere.007
-    2300024: Sphere.008
-    2300026: Sphere.009
-    2300028: Sphere.010
-    2300030: Sphere.011
-    2300032: Sphere.012
-    2300034: Sphere.013
-    3300000: Cylinder
-    3300002: Cylinder.001
-    3300004: Cylinder.002
-    3300006: Cylinder.003
-    3300008: Sphere
-    3300010: Sphere.001
-    3300012: Sphere.002
-    3300014: Sphere.003
-    3300016: Sphere.004
-    3300018: Sphere.005
-    3300020: Sphere.006
-    3300022: Sphere.007
-    3300024: Sphere.008
-    3300026: Sphere.009
-    3300028: Sphere.010
-    3300030: Sphere.011
-    3300032: Sphere.012
-    3300034: Sphere.013
+    100000: Armature
+    100002: Bone
+    100004: Bone.001
+    100006: Bone.002
+    100008: Bone.002_end
+    100010: Bone.003
+    100012: Bone.003_end
+    100014: Bone.004
+    100016: Bone.004_end
+    100018: Bone.005
+    100020: Bone.005_end
+    100022: Bone.006
+    100024: Bone.006_end
+    100026: Bone.007
+    100028: Bone.007_end
+    100030: Cylinder
+    100032: Cylinder.001
+    100034: Cylinder.002
+    100036: Cylinder.003
+    100038: //RootNode
+    100040: Sphere
+    100042: Sphere.001
+    100044: Sphere.002
+    100046: Sphere.003
+    100048: Sphere.004
+    100050: Sphere.005
+    100052: Sphere.006
+    100054: Sphere.007
+    100056: Sphere.008
+    100058: Sphere.009
+    100060: Sphere.010
+    100062: Sphere.011
+    100064: Sphere.012
+    100066: Sphere.013
+    400000: Armature
+    400002: Bone
+    400004: Bone.001
+    400006: Bone.002
+    400008: Bone.002_end
+    400010: Bone.003
+    400012: Bone.003_end
+    400014: Bone.004
+    400016: Bone.004_end
+    400018: Bone.005
+    400020: Bone.005_end
+    400022: Bone.006
+    400024: Bone.006_end
+    400026: Bone.007
+    400028: Bone.007_end
+    400030: Cylinder
+    400032: Cylinder.001
+    400034: Cylinder.002
+    400036: Cylinder.003
+    400038: //RootNode
+    400040: Sphere
+    400042: Sphere.001
+    400044: Sphere.002
+    400046: Sphere.003
+    400048: Sphere.004
+    400050: Sphere.005
+    400052: Sphere.006
+    400054: Sphere.007
+    400056: Sphere.008
+    400058: Sphere.009
+    400060: Sphere.010
+    400062: Sphere.011
+    400064: Sphere.012
+    400066: Sphere.013
     4300000: Cylinder.003
     4300002: Cylinder.002
     4300004: Sphere.013
@@ -97,6 +91,25 @@ ModelImporter:
     4300030: Sphere.002
     4300032: Sphere.001
     4300034: Sphere
+    9500000: //RootNode
+    13700000: Cylinder
+    13700002: Cylinder.001
+    13700004: Cylinder.002
+    13700006: Cylinder.003
+    13700008: Sphere
+    13700010: Sphere.001
+    13700012: Sphere.002
+    13700014: Sphere.003
+    13700016: Sphere.004
+    13700018: Sphere.005
+    13700020: Sphere.006
+    13700022: Sphere.007
+    13700024: Sphere.008
+    13700026: Sphere.009
+    13700028: Sphere.010
+    13700030: Sphere.011
+    13700032: Sphere.012
+    13700034: Sphere.013
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -137,7 +150,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1.3
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -154,7 +167,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -179,7 +192,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

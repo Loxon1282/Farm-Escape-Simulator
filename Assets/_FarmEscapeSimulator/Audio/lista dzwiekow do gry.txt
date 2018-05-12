@@ -1,0 +1,27 @@
+-2/3 muzyki w tle
+-efekty
+	-good
+		-coin
+		-trampoline bounce
+		-eating food
+		-eating superfood
+		-rocket/fire like when perfect launch
+	-bad
+		-bomb detonation
+		-spikes death
+		-bird death (slow down)
+	-neutral
+		-animals
+			-cow
+			-pig
+			-duckerz
+			-chicken
+		-wind
+		-(paralotnia) open
+		-fart
+		-catapult launch
+		-(korbka) rotating
+		-ground bouncing
+-UI
+	-button click
+	-purchase successful
