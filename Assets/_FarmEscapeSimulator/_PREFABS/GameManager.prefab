@@ -53,9 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstScene: MenuScene
   projectiles:
-  - {fileID: 1302312944725058, guid: 3cdfab005629c3f428cd7cda0fed378c, type: 2}
-  - {fileID: 1834648227685836, guid: 4dcb4b8fbeb0a0b479a633044b292009, type: 2}
-  - {fileID: 1425251966234808, guid: 5f036538228fa1f4f80bfe03c1c846b8, type: 2}
+  - {fileID: 1724147894469582, guid: 3cdfab005629c3f428cd7cda0fed378c, type: 2}
+  - {fileID: 1008938806108574, guid: 4dcb4b8fbeb0a0b479a633044b292009, type: 2}
+  - {fileID: 1281513326454358, guid: 5f036538228fa1f4f80bfe03c1c846b8, type: 2}
   currLauncher: {fileID: 11400000, guid: 8e674d1c18d79c54fb68c09561ef7284, type: 2}
   Controller: {fileID: 1626158857299236, guid: c2db2022c2553184da5edc3e7ef2d6f0, type: 2}
   debug: 0

@@ -20,6 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4551889884522648}
   - component: {fileID: 95266963456461270}
+  - component: {fileID: 54941593724428092}
+  - component: {fileID: 114822413806408686}
   m_Layer: 0
   m_Name: cow
   m_TagString: Untagged
@@ -232,7 +234,7 @@ GameObject:
   - component: {fileID: 4100651410923114}
   - component: {fileID: 137532903136886026}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,8 +291,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1839923441271944}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: 0.50000006, w: 0.49999997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4551889884522648}
@@ -330,8 +332,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754102720924674}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: 0.50000006, w: 0.49999997}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4879426628191182}
@@ -388,7 +390,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1008938806108574}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.963118, y: -11.51, z: -9.172595}
+  m_LocalPosition: {x: -6.8938427, y: 1.6713636, z: 1.6629531}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4260003146295126}
@@ -534,6 +536,21 @@ Transform:
   m_Father: {fileID: 4412593046816748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &54941593724428092
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008938806108574}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &95266963456461270
 Animator:
   serializedVersion: 3
@@ -551,6 +568,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114822413806408686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1008938806108574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 983fa4d7219ac114a978c32225d30fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FartPower: 0
+  FartCost: 0.1
+  TorqueForce: 10
+  GlidingForce: 10
+  VelocityModifie: 10
+  Nosedive: 10
+  MinePower: 10
+  BallonTime: 3
+  BallonForce: 10
+  SlowFactor: 0.2
+  isGliding: 0
+  isFarting: 0
 --- !u!137 &137532903136886026
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -564,11 +605,12 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d6732642a1ea699469279c40941cecfa, type: 2}
-  - {fileID: 2100000, guid: f91c0ee385f5314438900771abd48845, type: 2}
-  - {fileID: 2100000, guid: 96c22749ae68cdb40bf2270e2f37d326, type: 2}
-  - {fileID: 2100000, guid: 25e8833143f9db94f8afafaef87edf76, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
