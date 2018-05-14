@@ -67,10 +67,11 @@ GameObject:
   - component: {fileID: 95745916274197564}
   - component: {fileID: 54383016100672144}
   - component: {fileID: 114442779257861120}
+  - component: {fileID: 135910883977620160}
   m_Layer: 0
   m_Name: chicken
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -303,7 +304,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1281513326454358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.0105715, y: 0.54433584, z: -2.399039}
+  m_LocalPosition: {x: 4.9598465, y: 2.550962, z: -3.855895}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4636068180221380}
@@ -416,7 +417,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1592696343417206}
   m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: 0.50000006, w: 0.49999997}
-  m_LocalPosition: {x: -0.19968271, y: 0.56039035, z: 0}
+  m_LocalPosition: {x: -0.19968271, y: 0.17939031, z: 0}
   m_LocalScale: {x: 20.379202, y: 20.379192, z: 20.37919}
   m_Children:
   - {fileID: 4260690705224446}
@@ -431,8 +432,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494297910075392}
   m_LocalRotation: {x: 0.03016611, y: 0.70646304, z: -0.03016611, w: 0.70646304}
-  m_LocalPosition: {x: 0.061401367, y: -0.00728029, z: 0.0028471947}
-  m_LocalScale: {x: 14.863895, y: 14.667729, z: 2.4087856}
+  m_LocalPosition: {x: 0.061401367, y: -0.38828027, z: 0.0028471947}
+  m_LocalScale: {x: 14.863895, y: 14.667729, z: 2.4087865}
   m_Children: []
   m_Father: {fileID: 4246261483853508}
   m_RootOrder: 1
@@ -491,7 +492,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 0
 --- !u!95 &95745916274197564
 Animator:
@@ -534,6 +535,18 @@ MonoBehaviour:
   SlowFactor: 0.2
   isGliding: 0
   isFarting: 0
+--- !u!135 &135910883977620160
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1281513326454358}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137891102076729250
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

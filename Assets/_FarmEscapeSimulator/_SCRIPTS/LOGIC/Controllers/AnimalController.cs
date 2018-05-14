@@ -36,7 +36,6 @@ public class AnimalController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
         FocusCameraOnAnimal();
         screenMargin = Screen.width * 1/4;
         isControlling = false;
@@ -203,6 +202,7 @@ public class AnimalController : MonoBehaviour
     public void ShowUI()
     {
         IGroup = Instantiate(group, GameObject.Find("Canvas").GetComponent<RectTransform>());
+        IGroup.name = "AnimalContr";
         ShowGlideButton(IGroup.GetComponent<RectTransform>());
     }
 
