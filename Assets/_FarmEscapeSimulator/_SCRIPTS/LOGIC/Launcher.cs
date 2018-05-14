@@ -105,7 +105,7 @@ public class Launcher : MonoBehaviour
         working = false;
         localProjectile.transform.parent = null;
         localProjectile.GetComponent<Rigidbody>().isKinematic = false;
-        localProjectile.GetComponent<Rigidbody>().AddForce(launchVector * stats.lPower * lState);
+        localProjectile.GetComponent<Rigidbody>().AddForce(launchVector * stats.lPower * lState, ForceMode.VelocityChange);
         Deactivate();
     }
 
