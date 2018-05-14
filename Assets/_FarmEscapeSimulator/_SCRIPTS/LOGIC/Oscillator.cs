@@ -6,7 +6,11 @@ public class Oscillator : MonoBehaviour
 {
 
     [SerializeField]
-    RectTransform Scale;        //UI element responsible for osciilation
+    GameObject Scale;        //UI
+    [SerializeField]
+    GameObject group;
+    RectTransform IScale;   
+    GameObject IGroup;
 
     [SerializeField]
     float oExtSpeed;            // oscillation speed added to base speed
@@ -27,9 +31,9 @@ public class Oscillator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
-        arrow = Scale.transform.Find("arrow").GetComponent<RectTransform>();
-        height = Scale.transform.GetComponent<RectTransform>().sizeDelta.y;
+        ShowUI();
+        arrow = IScale.transform.Find("arrow").GetComponent<RectTransform>();
+        height = IScale.transform.GetComponent<RectTransform>().sizeDelta.y;
         height /= 2;
 
         oState = 0.5f;
@@ -69,8 +73,22 @@ public class Oscillator : MonoBehaviour
 
     public void Deactivate()
     {
-        Scale.gameObject.SetActive(false);
+        IScale.gameObject.SetActive(false);
         enabled = false;
+    }
+
+    public void ShowUI()
+    {
+        IGroup = Instantiate(group, GameObject.Find("Canvas").GetComponent<RectTransform>());
+        IGroup.name = "Scale";
+
+        GameObject s = Instantiate(Scale, IGroup.transform);
+        IScale = s.GetComponent<RectTransform>();
+    }
+
+    public void HideUI()
+    {
+        Destroy(IGroup);
     }
 
 }

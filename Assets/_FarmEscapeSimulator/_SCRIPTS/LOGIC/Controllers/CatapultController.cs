@@ -1,13 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class CatapultController : MonoBehaviour
 {
 
-
-    [SerializeField]
-    RectTransform wheel;        //wheel  object
+    //[SerializeField]
+    //RectTransform wheel;        //wheel  object
 
     [SerializeField]
     float maxDist;              //max distance from wheel center to track touch position
@@ -33,12 +34,20 @@ public class CatapultController : MonoBehaviour
     bool timerActive;
     bool launched;
 
+    GameObject IGroup;          //UI
+    RectTransform IWheel;
+    [SerializeField]
+    GameObject wheel;
+    [SerializeField]
+    GameObject group;
+
     Launcher launcher;
     Oscillator oscillator;    //oscillator graphical representation and logic
 
     // Use this for initialization
     void Start()
     {
+        ShowUI();
         launcher = GetComponent<Launcher>();
         sum = maxSum * launcher.GetState();
         fingerIn = false;
@@ -67,14 +76,14 @@ public class CatapultController : MonoBehaviour
         if (Input.touchCount >= 1)
         {
 
-            float touchDist = Vector2.Distance(Input.GetTouch(0).position, wheel.position); // calculates distance between touch and center of wheel
+            float touchDist = Vector2.Distance(Input.GetTouch(0).position, IWheel.position); // calculates distance between touch and center of wheel
 
             if (Input.GetTouch(0).phase == TouchPhase.Began)                                                //Finger touch
             {
 
                 if (touchDist >= minDist && touchDist <= maxDist)
                 {
-                    fingerPrevAngle = GetLookAtRotation(wheel.position, Input.GetTouch(0).position);
+                    fingerPrevAngle = GetLookAtRotation(IWheel.position, Input.GetTouch(0).position);
                     fingerId = Input.GetTouch(0).fingerId;
                     launched = false;
                     fingerIn = true;
@@ -90,7 +99,7 @@ public class CatapultController : MonoBehaviour
                 {
                     if (fingerIn) // if finger was inside range of wheel in previous frame 
                     {
-                        fingerAngel = GetLookAtRotation(wheel.position, Input.GetTouch(0).position);
+                        fingerAngel = GetLookAtRotation(IWheel.position, Input.GetTouch(0).position);
                         fingerDeltaAngle = fingerAngel - fingerPrevAngle;
                         fingerPrevAngle = fingerAngel;
 
@@ -105,7 +114,7 @@ public class CatapultController : MonoBehaviour
                     }
                     else // if finger was outside range we can add angel
                     {
-                        fingerAngel = GetLookAtRotation(wheel.position, Input.GetTouch(0).position);
+                        fingerAngel = GetLookAtRotation(IWheel.position, Input.GetTouch(0).position);
                         fingerPrevAngle = fingerAngel;
                         fingerIn = true;
                     }
@@ -160,5 +169,19 @@ public class CatapultController : MonoBehaviour
     {
         wheel.gameObject.SetActive(false);
         enabled = false;
+    }
+
+    public void ShowUI()
+    {
+        IGroup = Instantiate(group, GameObject.Find("Canvas").GetComponent<RectTransform>());
+        IGroup.name = "CatapultContr";
+
+        GameObject w = Instantiate(wheel, IGroup.transform);
+        IWheel = w.GetComponent<RectTransform>();
+    }
+
+    public void HideUI()
+    {
+        Destroy(IGroup);
     }
 }
