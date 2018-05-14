@@ -111,11 +111,10 @@ public class Launcher : MonoBehaviour
 
     public void SetProjectile()
     {
-        localProjectile = Instantiate(stats.projectile, spoon.transform.position,  Quaternion.Euler(0,0,0));
+        localProjectile = Instantiate(stats.projectile, spoon.transform.position,  Quaternion.Euler(0,0,45));
         localProjectile.transform.parent = spoon.transform;
         localProjectile.GetComponent<Rigidbody>().isKinematic = true;
     }
-
 
     public float getMaxSpins()
     {
