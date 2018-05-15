@@ -11,9 +11,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7c164e57e57804db3e6e9180831b58, type: 3}
   m_Name: StartingLauncherStats
   m_EditorClassIdentifier: 
-  projectile: {fileID: 1724147894469582, guid: 3cdfab005629c3f428cd7cda0fed378c, type: 2}
+  projectile: {fileID: 1281513326454358, guid: 5f036538228fa1f4f80bfe03c1c846b8, type: 2}
   speed: 0.2
-  lPower: 700
+  lPower: 100
   perfAngle: 45
   deviationAngle: 0
   maxSpins: 10
