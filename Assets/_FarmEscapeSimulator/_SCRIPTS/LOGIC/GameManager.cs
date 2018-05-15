@@ -183,4 +183,15 @@ public class GameManager : MonoBehaviour {
             Destroy(currController.gameObject);
         }
     }
+
+    public string[] GetProjectileNames()
+    {
+        string[] Names = new string[projectiles.Length];
+        for(int i = 0; i< projectiles.Length; i++)
+        {
+            Names[i] = projectiles[i].name;
+        }
+        return Names;
+    }
+
 }

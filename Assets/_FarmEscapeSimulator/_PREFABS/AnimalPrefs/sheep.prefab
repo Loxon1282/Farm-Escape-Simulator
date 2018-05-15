@@ -1558,7 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FartPower: 0
   FartCost: 0.1
-  TorqueForce: 10
+  TorqueForce: 1000
   GlidingForce: 10
   VelocityModifie: 10
   Nosedive: 10
